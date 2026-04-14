@@ -19,7 +19,7 @@ module onehot(
     dff Edff(.Default(1'b0), .D(En), .clk(clk), .reset(reset), .Q(Est));
 
 
-    assign z = Cstate | Estate;
+    assign z = Cst | Est;
  
    
     assign Anext = 1'b0;
