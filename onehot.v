@@ -22,10 +22,10 @@ module onehot(
     assign z = Cst | Est;
  
    
-    assign Anext = 1'b0;
-    assign Bnext = ~w & (Ast | Dst | Est);
-    assign Cnext = ~w & (Bst | Cst);
-    assign Dnext =  w & (Ast | Bst | Cst);
-    assign Enext =  w & (Dst | Est);
+    assign An = 1'b0;
+    assign Bn = ~w & (Ast | Dst | Est);
+    assign Cn = ~w & (Bst | Cst);
+    assign Dn =  w & (Ast | Bst | Cst);
+    assign En =  w & (Dst | Est);
  
 endmodule
