@@ -17,3 +17,15 @@ module onehot(
     dff Cdff(.Default(1'b0), .D(Cn), .clk(clk), .reset(reset), .Q(Cst));
     dff Ddff(.Default(1'b0), .D(Dn), .clk(clk), .reset(reset), .Q(Dst));
     dff Edff(.Default(1'b0), .D(En), .clk(clk), .reset(reset), .Q(Est));
+
+
+    assign z = Cstate | Estate;
+ 
+   
+    assign Anext = 1'b0;
+    assign Bnext = ~w & (Ast | Dst | Est);
+    assign Cnext = ~w & (Bst | Cst);
+    assign Dnext =  w & (Ast | Bst | Cst);
+    assign Enext =  w & (Dst | Est);
+ 
+endmodule
