@@ -1,8 +1,8 @@
 module top(
-    input sw, // w
-    output [9:0] led, // see IO table
-    input btnC, // clk
-    input btnU // reset
+    input sw, 
+    output [9:0] led, 
+    input btnC, 
+    input btnU 
 );
 
     wire z_onehot;
@@ -20,7 +20,6 @@ module top(
         .Estate(oh_E)
     );
  
-    // Binary state machine outputs
     wire z_binary;
     wire [2:0] bin_state;
  
@@ -32,15 +31,7 @@ module top(
         .State(bin_state)
     );
  
-    // IO Table pin assignments:
-    // led[0]   = One-hot Z
-    // led[1]   = Binary Z
-    // led[2]   = One-hot state A
-    // led[3]   = One-hot state B
-    // led[4]   = One-hot state C
-    // led[5]   = One-hot state D
-    // led[6]   = One-hot state E
-    // led[9:7] = Binary State [2:0]
+    
     assign led[0]   = z_onehot;
     assign led[1]   = z_binary;
     assign led[2]   = oh_A;
